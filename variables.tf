@@ -1,4 +1,0 @@
-variable subscriptionid {
-   type = string
-}
-

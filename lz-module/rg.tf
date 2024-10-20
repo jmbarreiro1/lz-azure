@@ -1,4 +1,4 @@
 resource "azurerm_resource_group" "resource_group" {
-  name = "jose-rg"
-  location = "West Europe"
+  name = var.rg
+  location = var.location
 }
