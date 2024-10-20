@@ -1,0 +1,3 @@
+subscriptionid = "<subscription id>"
+rg = "<resource group name>"
+location = "West Europe"
