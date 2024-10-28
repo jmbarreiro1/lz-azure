@@ -1,3 +1,25 @@
 subscriptionid = "<subscription id>"
-rg = "<resource group name>"
+rg = "<resource group name hub>" #rg_lz
+rgsp =<resource group name spoke>"
 location = "West Europe"
+address_space_lz = ["10.1.0.0/16"] #address space hub
+address_space_sp = ["10.2.0.0/16"] #address space spoke
+tags_lz = { #tags hub
+  key = "value"
+  key2 = "value2"
+}
+vnet_name_lz = "lz-vnet" #vnet name hub
+
+
+subnets_lz = { #subnets hub
+    subnet1 = {
+      address_prefixes = ["10.0.1.0/24"]
+    },
+    subnet2 = {
+      address_prefixes = ["10.0.2.0/24"]
+    },
+    subnet3 = {
+      address_prefixes = ["10.0.3.0/24"]
+      # No security group for this subnet
+    }
+  }
