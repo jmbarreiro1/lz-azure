@@ -1,0 +1,40 @@
+# Azure Network Security Group Module
+
+This Terraform module creates an Azure Network Security Group (NSG) and its associated security rules.
+
+## Usage
+
+```hcC
+module "network_security_group" {
+  source              = "./azure-nsg-module"
+  name                = "example-nsg"
+  location            = "East US"
+  resource_group_name = "example-resource-group"
+  tags = {
+    Environment = "Development"
+  }
+  security_rules = [
+    {
+      name                       = "AllowHTTP"
+      priority                   = 100
+      direction                  = "Inbound"
+      access                     = "Allow"
+      protocol                   = "Tcp"
+      source_port_range          = "*"
+      destination_port_range     = "80"
+      source_address_prefix      = "*"
+      destination_address_prefix = "*"
+    },
+    {
+      name                       = "DenyAll"
+      priority                   = 200
+      direction                  = "Inbound"
+      access                     = "Deny"
+      protocol                   = "*"
+      source_port_range          = "*"
+      destination_port_range     = "*"
+      source_address_prefix      = "*"
+      destination_address_prefix = "*"
+    }
+  ]
+}

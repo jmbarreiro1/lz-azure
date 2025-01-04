@@ -13,7 +13,7 @@ resource "azurerm_subnet" "subnet_lz" {
   for_each = var.subnets_lz
 
   name                 = each.key
-  resource_group_name  = azurerm_resource_group.resource_group_lz.location
+  resource_group_name  = azurerm_resource_group.resource_group_lz.name
   virtual_network_name = var.vnet_name_lz
   address_prefixes     = each.value.address_prefixes
 

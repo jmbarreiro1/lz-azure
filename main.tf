@@ -10,6 +10,13 @@ module "lz-module" {
   
 }
 
+resource "azurerm_subnet_network_security_group_association" "lz" {
+  for_each = module.lz-module.subnet_ids_lz
+
+  subnet_id                 = each.value
+  network_security_group_id = module.network_security_group.network_security_group_id
+}
+
 module "sp-module" {
    source = "./sp-module"
    rg_sp = var.rg_sp

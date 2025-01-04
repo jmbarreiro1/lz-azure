@@ -1,25 +1,55 @@
-subscriptionid = "<subscription id>"
-rg = "<resource group name hub>" #rg_lz
-rgsp =<resource group name spoke>"
-location = "West Europe"
-address_space_lz = ["10.1.0.0/16"] #address space hub
-address_space_sp = ["10.2.0.0/16"] #address space spoke
-tags_lz = { #tags hub
-  key = "value"
-  key2 = "value2"
+subscriptionid = "xxxxx"
+rg_lz = "xxxx"
+rg_sp = "xxxx"
+location_lz = "West Europe"
+location_sp = "West Europe"
+address_space_lz = ["10.1.0.0/16"]
+address_space_sp = ["10.2.0.0/16"]
+tags_lz = {
+  environment = "Develop"
+  monitoring = "None"
 }
-vnet_name_lz = "lz-vnet" #vnet name hub
+tags_sp = {
+  environment = "Develop"
+  monitoring = "None"
+}
+
+address_prefixes_lz = ["10.1.0.0/24"]
+vnet_name_lz = "xxx"
+
+vnet_name_sp = "xxx"
 
 
-subnets_lz = { #subnets hub
+xxx = {
     subnet1 = {
-      address_prefixes = ["10.0.1.0/24"]
+      address_prefixes = ["10.1.128.0/18"]
     },
     subnet2 = {
-      address_prefixes = ["10.0.2.0/24"]
+      address_prefixes = ["10.1.192.0/19"]
     },
     subnet3 = {
-      address_prefixes = ["10.0.3.0/24"]
+      address_prefixes = ["10.1.224.0/19"]
       # No security group for this subnet
     }
   }
+
+
+xxxx = {
+    subnet1 = {
+      address_prefixes = ["10.2.128.0/18"]
+    },
+    subnet2 = {
+      address_prefixes = ["10.2.192.0/19"]
+    },
+    subnet3 = {
+      address_prefixes = ["10.2.224.0/19"]
+      # No security group for this subnet
+    }
+  }
+
+name_nsg = "xxxx"
+location_nsg = "West Europe"
+tags_nsg = {
+  environment = "Develop"
+  monitoring = "None"
+}

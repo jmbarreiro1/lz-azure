@@ -64,3 +64,16 @@ variable "subnets_sp" {
     security_group   = optional(string) # Optional security group association
   }))
 }
+
+#nsg
+variable "name_nsg" {
+   type = string
+}
+
+variable "location_nsg" {
+   type = string
+}
+
+variable tags_nsg {
+   type = map(string)
+}
