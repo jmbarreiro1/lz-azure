@@ -2,18 +2,30 @@ variable subscriptionid {
    type = string
 }
 
-variable rg {
+variable vnet_name_sp {
    type = string
 }
 
-variable location {
+variable rg_sp {
    type = string
 }
 
-variable netname {
+variable location_sp {
    type = string
 }
 
-variable address_space {
-   type = list(string)
+variable address_space_sp {
+   type = list
+}
+
+variable tags_sp {
+   type = map(string)
+}
+
+variable "subnets_sp" {
+  description = "Map of subnet configurations"
+  type = map(object({
+    address_prefixes = list(string)
+    security_group   = optional(string) # Optional security group association
+  }))
 }

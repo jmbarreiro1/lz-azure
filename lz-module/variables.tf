@@ -2,27 +2,27 @@ variable subscriptionid {
    type = string
 }
 
-variable vnet_name {
+variable vnet_name_lz {
    type = string
 }
 
-variable rg {
+variable rg_lz {
    type = string
 }
 
-variable location {
+variable location_lz {
    type = string
 }
 
-variable address_space {
+variable address_space_lz {
    type = list
 }
 
-variable tags {
+variable tags_lz {
    type = map(string)
 }
 
-variable "subnets" {
+variable "subnets_lz" {
   description = "Map of subnet configurations"
   type = map(object({
     address_prefixes = list(string)

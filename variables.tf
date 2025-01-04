@@ -2,15 +2,19 @@ variable subscriptionid {
    type = string
 }
 
-variable rg {
+variable rg_lz {
    type = string
 }
 
-variable rgsp {
+variable rg_sp {
    type = string
 }
 
-variable location {
+variable location_lz {
+   type = string
+}
+
+variable location_sp {
    type = string
 }
 
@@ -33,6 +37,10 @@ variable tags_lz {
    type = map(string)
 }
 
+variable tags_sp {
+   type = map(string)
+}
+
 variable "subnets_lz" {
   description = "Map of subnet configurations"
   type = map(object({
@@ -43,4 +51,16 @@ variable "subnets_lz" {
 
 variable vnet_name_lz {
    type = string
+}
+
+variable vnet_name_sp {
+   type = string
+}
+
+variable "subnets_sp" {
+  description = "Map of subnet configurations"
+  type = map(object({
+    address_prefixes = list(string)
+    security_group   = optional(string) # Optional security group association
+  }))
 }
