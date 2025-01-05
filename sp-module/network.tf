@@ -17,4 +17,7 @@ resource "azurerm_subnet" "subnet_sp" {
   virtual_network_name = var.vnet_name_sp
   address_prefixes     = each.value.address_prefixes
 
+   depends_on = [
+    azurerm_virtual_network.vnet_sp
+  ]
 }

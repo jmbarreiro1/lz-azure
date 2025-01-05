@@ -1,44 +1,37 @@
-variable subscriptionid {
-   type = string
+variable "subscriptionid" {
+  type = string
 }
 
-variable rg_lz {
-   type = string
+variable "rg_lz" {
+  type = string
 }
 
-variable rg_sp {
-   type = string
+variable "rg_sp" {
+  type = string
 }
 
-variable location_lz {
-   type = string
+variable "location_lz" {
+  type = string
 }
 
-variable location_sp {
-   type = string
+variable "location_sp" {
+  type = string
 }
 
-variable address_space_sp {
-   type = list(string)
+variable "address_space_sp" {
+  type = list(string)
 }
 
-variable address_space_lz {
-   type = list(string)
-} 
-
-
-variable address_prefixes_lz {
-   type = list
+variable "address_space_lz" {
+  type = list(string)
 }
 
-
-
-variable tags_lz {
-   type = map(string)
+variable "tags_lz" {
+  type = map(string)
 }
 
-variable tags_sp {
-   type = map(string)
+variable "tags_sp" {
+  type = map(string)
 }
 
 variable "subnets_lz" {
@@ -49,12 +42,12 @@ variable "subnets_lz" {
   }))
 }
 
-variable vnet_name_lz {
-   type = string
+variable "vnet_name_lz" {
+  type = string
 }
 
-variable vnet_name_sp {
-   type = string
+variable "vnet_name_sp" {
+  type = string
 }
 
 variable "subnets_sp" {
@@ -67,13 +60,13 @@ variable "subnets_sp" {
 
 #nsg
 variable "name_nsg" {
-   type = string
+  type = string
 }
 
 variable "location_nsg" {
-   type = string
+  type = string
 }
 
-variable tags_nsg {
-   type = map(string)
+variable "tags_nsg" {
+  type = map(string)
 }

@@ -1,9 +1,9 @@
 module "network_security_group" {
   source              = "./nsg-module"
-  name_nsg                = var.name_nsg
-  location_nsg         = var.location_nsg
+  name_nsg            = var.name_nsg
+  location_nsg        = var.location_nsg
   resource_group_name = var.rg_lz
-  tags_nsg = var.tags_nsg
+  tags_nsg            = var.tags_nsg
   security_rules = [
     {
       name                       = "AllowHTTP"
@@ -12,7 +12,7 @@ module "network_security_group" {
       access                     = "Allow"
       protocol                   = "Tcp"
       source_port_range          = "*"
-      destination_port_range     = "80"
+      destination_port_range     = "443"
       source_address_prefix      = "*"
       destination_address_prefix = "*"
     },
