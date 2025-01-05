@@ -14,7 +14,7 @@ resource "azurerm_subnet_network_security_group_association" "lz" {
   for_each = module.lz-module.subnet_ids_lz
 
   subnet_id                 = each.value
-  network_security_group_id = module.network_security_group.network_security_group_id
+  network_security_group_id = module.network_security_group_lz.network_security_group_id
 }
 
 module "sp-module" {
@@ -26,4 +26,11 @@ module "sp-module" {
   vnet_name_sp     = var.vnet_name_sp
   address_space_sp = var.address_space_sp
   subnets_sp       = var.subnets_sp
+}
+
+resource "azurerm_subnet_network_security_group_association" "sp" {
+  for_each = module.sp-module.subnet_ids_sp
+
+  subnet_id                 = each.value
+  network_security_group_id = module.network_security_group_sp.network_security_group_id
 }
