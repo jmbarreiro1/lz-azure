@@ -23,19 +23,20 @@ resource "azurerm_kubernetes_cluster" "aks" {
     network_policy       = var.network_policy
     service_cidr         = var.service_cidr
     dns_service_ip       = var.dns_service_ip
-    docker_bridge_cidr   = var.docker_bridge_cidr
+    #docker_bridge_cidr   = var.docker_bridge_cidr
     load_balancer_sku    = "standard"
     outbound_type        = "userDefinedRouting"
   }
 
   private_cluster_enabled = true
 
-  api_server_authorized_ip_ranges = var.api_server_authorized_ip_ranges
+  #api_server_authorized_ip_ranges = var.api_server_authorized_ip_ranges
 
   tags = var.tags
 }
 
 resource "azurerm_private_dns_zone_virtual_network_link" "dns_zone_link" {
+  name =              = var.private_dns_zone_name
   count               = var.private_dns_zone_id == null ? 0 : 1
   private_dns_zone_id = var.private_dns_zone_id
   virtual_network_id  = var.vnet_id

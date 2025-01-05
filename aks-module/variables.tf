@@ -122,3 +122,10 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "private_dns_zone_name" {
+  description = "Private DNS Zone Name"
+  type        = string
+  default     = "aks-lz"
+}
+

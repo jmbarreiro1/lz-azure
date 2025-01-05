@@ -124,17 +124,6 @@ variable "node_pool_tags" {
   default     = {}
 }
 
-# Networking configuration
-variable "subnet_id" {
-  description = "The subnet ID where the AKS cluster nodes will be deployed"
-  type        = string
-}
-
-variable "vnet_id" {
-  description = "The ID of the virtual network for the private cluster"
-  type        = string
-}
-
 variable "private_dns_zone_id" {
   description = "The ID of the private DNS zone for the Kubernetes API server"
   type        = string
