@@ -118,18 +118,6 @@ variable "default_node_pool_os_disk_size_gb" {
   default     = 128
 }
 
-variable "node_pool_tags" {
-  description = "Tags for the node pool"
-  type        = map(string)
-  default     = {}
-}
-
-variable "private_dns_zone_id" {
-  description = "The ID of the private DNS zone for the Kubernetes API server"
-  type        = string
-  default     = null
-}
-
 variable "network_plugin" {
   description = "The network plugin to use ('kubenet' or 'azure')"
   type        = string
@@ -178,4 +166,13 @@ variable "tags" {
   description = "Tags for the AKS cluster"
   type        = map(string)
   default     = {}
+}
+
+variable "location" {
+  type = string
+}
+
+
+variable "resource_group_name" {
+  type = string
 }

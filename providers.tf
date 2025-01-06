@@ -1,7 +1,7 @@
 # We strongly recommend using the required_providers block to set the
 # Azure Provider source and version being used
 terraform {
-  required_version = ">= 1.3.7" 
+  required_version = ">= 1.3.7"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
